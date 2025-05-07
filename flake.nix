@@ -22,13 +22,6 @@
       version  = "0.1.0";
       src      = self;
       cargoSha256 = "sha256-klW5lUlnKxMWPIwmG03hXaZweRixLShh2F9L3oPz6KY=";
-      # ensure there's a Cargo.lock for the vendoring step
-      preBuild = ''
-        cargo generate-lockfile
-      '';
-
-      # tell cargo to build for the AArch64 target
-    #   cargoBuildFlags = [ "--target" target "--release" ];
 
       # bindgen needs a host clang + libclang
       nativeBuildInputs = [
@@ -54,7 +47,7 @@
         pkgs.llvmPackages.libclang
       ];
       shellHook = ''
-        echo "Shell ready – run 'cargo generate-lockfile' to produce Cargo.lock"
+        echo "Shell ready - run 'cargo generate-lockfile' to produce Cargo.lock"
       '';
     };
   };
