@@ -9,7 +9,7 @@
     target = "aarch64-unknown-linux-gnu";
 
     # your host pkgs (for clang & bindgen)
-    pkgs      = import nixpkgs { inherit host; };
+    pkgs      = import nixpkgs { system = host; };
     # the cross‐compilation set (targeting AArch64)
     crossPkgs = import nixpkgs {
       system     = host;
