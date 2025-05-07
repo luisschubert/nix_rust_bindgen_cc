@@ -21,7 +21,7 @@
       pname    = "example";
       version  = "0.1.0";
       src      = self;
-      cargoSha256 = "0000000000000000000000000000000000000000000000000000";
+      cargoSha256 = "sha256-klW5lUlnKxMWPIwmG03hXaZweRixLShh2F9L3oPz6KY=";
       # ensure there's a Cargo.lock for the vendoring step
       preBuild = ''
         cargo generate-lockfile
