@@ -21,6 +21,7 @@
       pname    = "example";
       version  = "0.1.0";
       src      = self;
+      cargoSha256 = "0000000000000000000000000000000000000000000000000000";
 
       # tell cargo to build for the AArch64 target
       cargoBuildFlags = [ "--target" target "--release" ];
