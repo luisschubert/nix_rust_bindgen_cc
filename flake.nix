@@ -28,7 +28,7 @@
       '';
 
       # tell cargo to build for the AArch64 target
-      cargoBuildFlags = [ "--target" target "--release" ];
+    #   cargoBuildFlags = [ "--target" target "--release" ];
 
       # bindgen needs a host clang + libclang
       nativeBuildInputs = [
