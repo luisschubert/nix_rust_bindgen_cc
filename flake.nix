@@ -43,7 +43,7 @@
       env = {
         CC                                  = crossPkgs.stdenv.cc;
         CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER = crossPkgs.stdenv.cc;
-        LIBCLANG_PATH                       = pkgs.llvmPackages.libclang.lib;
+        LIBCLANG_PATH                       = "${pkgs.llvmPackages.libclang}/lib";
       };
     };
     devShells.x86_64-linux.shell = pkgs.mkShell {
