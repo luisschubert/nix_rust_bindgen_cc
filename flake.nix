@@ -46,5 +46,16 @@
         LIBCLANG_PATH                       = pkgs.llvmPackages.libclang.lib;
       };
     };
+    devShells.x86_64-linux.shell = pkgs.mkShell {
+      buildInputs = [
+        pkgs.rustc
+        pkgs.cargo
+        pkgs.clang
+        pkgs.llvmPackages.libclang
+      ];
+      shellHook = ''
+        echo "Shell ready – run 'cargo generate-lockfile' to produce Cargo.lock"
+      '';
+    };
   };
 }
