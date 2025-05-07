@@ -22,6 +22,10 @@
       version  = "0.1.0";
       src      = self;
       cargoSha256 = "0000000000000000000000000000000000000000000000000000";
+      # ensure there's a Cargo.lock for the vendoring step
+      preBuild = ''
+        cargo generate-lockfile
+      '';
 
       # tell cargo to build for the AArch64 target
       cargoBuildFlags = [ "--target" target "--release" ];
